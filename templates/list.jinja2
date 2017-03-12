@@ -1,0 +1,10 @@
+<table>
+{% for lfg in lfgs %}
+        {% for key, value in lfg.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+{% endfor %}
+</table>
