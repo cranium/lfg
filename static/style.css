@@ -64,6 +64,7 @@ body {
 .lfg--progress-bar-label {
     position: absolute;
     left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .lfg--flex-row {
