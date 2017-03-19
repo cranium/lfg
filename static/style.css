@@ -82,6 +82,10 @@ body {
     align-items: center;
 }
 
+.lfg--flex-row > div {
+    margin: 4px;
+}
+
 .lfg--button {
     padding: 4px;
     background-color: #333333;
