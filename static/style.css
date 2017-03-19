@@ -53,11 +53,11 @@ body {
 }
 
 .lfg--progress-bar-outer {
-    background-color: #27AE60;
+    background-color: #333333;
 }
 
 .lfg--progress-bar-inner {
-    background-color: #6FCF97;
+    background-color: #27AE60;
     height: 16px;
 }
 
