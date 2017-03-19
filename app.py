@@ -83,6 +83,7 @@ def group(group_id):
 def save_lfg_hash(pipeline: "redis.client.Pipeline", id: int, form: LfgForm):
     key = "LFG:{id}".format(id=id)  # save my LFG as LFG:num
     data = {
+        "id": id,
         "name": form.name.data,
         "have": form.have.data,
         "need": form.need.data
