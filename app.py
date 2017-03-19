@@ -70,7 +70,14 @@ def index():
             pipeline.hgetall('LFG:' + lfg_id)
         lfgs = pipeline.execute()
 
-    return render_template('list.jinja2', lfgs=lfgs)
+    avatar_url = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/63/63eeef78bdec22e51e43064a47ab0eb7764629be_medium.jpg"
+
+    return render_template('list.jinja2', lfgs=lfgs, avatar_url=avatar_url)
+
+
+@app.route('/group/<int:group_id>', methods=['GET', 'POST'])
+def group(group_id):
+    return "Group ID: {group_id}".format(group_id=group_id)
 
 
 def save_lfg_hash(pipeline: "redis.client.Pipeline", id: int, form: LfgForm):

@@ -1,0 +1,118 @@
+body {
+    background-color: #333333;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.lfg--block {
+    background-color: #222222;
+    border-radius: 4px;
+}
+
+.lfg--block-secondary {
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+.lfg--inline-block {
+    display: inline-block;
+}
+
+.lfg--padding-1 {
+    padding: 4px;
+}
+
+.lfg--margin-0 {
+    margin: 0;
+}
+
+.lfg--color-secondary {
+    color: #777777;
+}
+
+.lfg--color-success {
+    color: #27AE60;
+}
+
+.lfg--text-center {
+    text-align: center;
+}
+
+.lfg--text-uppercase {
+    text-transform: uppercase;
+}
+
+.lfg--text-bold {
+    font-weight: bold;
+}
+
+.lfg--vertical-top {
+    vertical-align: top;
+}
+
+.lfg--progress-bar-outer {
+    background-color: #27AE60;
+}
+
+.lfg--progress-bar-inner {
+    background-color: #6FCF97;
+    height: 16px;
+}
+
+.lfg--tag-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lfg--tag:before {
+    content: '';
+    width: .8em;
+    height: .8em;
+    background-color: #27AE60;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.lfg--flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.lfg--button {
+    padding: 4px;
+    background-color: #333333;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.lfg--text-right {
+    text-align: right;
+}
+
+.lfg--flex-grow-1 {
+    flex-grow: 1;
+}
+
+.lfg--flex-grow-2 {
+    flex-grow: 2;
+}
+
+.lfg--color-logo {
+    color: darkslateblue;
+}
+
+.lfg--margin-bottom-1 {
+    margin-bottom: 4px;
+}
+
+.lfg--margin-bottom-2 {
+    margin-bottom: 8px;
+}
+
+.lfg--display-block {
+    display: block;
+}
