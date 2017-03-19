@@ -100,6 +100,10 @@ body {
     flex-basis: 0;
 }
 
+.lfg--flex-between {
+    justify-content: space-between;
+}
+
 .lfg--color-logo {
     color: darkslateblue;
 }
