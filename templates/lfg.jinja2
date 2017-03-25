@@ -1,24 +1,38 @@
 {% extends "page.jinja2" %}
 {% block content %}
-    <div class="lfg--block">
-        <form method="POST" action="/lfg">
-            {{ form.name.label }}
-            {{ form.name }}
-            {% for error in form.name.errors %}
-                {{ error }}
-            {% endfor %}
-            {{ form.have.label }}
-            {% for error in form.have.errors %}
-                {{ error }}
-            {% endfor %}
-            {{ form.have }}
-            {{ form.need.label }}
-            {% for error in form.need.errors %}
-                {{ error }}
-            {% endfor %}
-            {{ form.need }}
-            {{ form.csrf_token }}
-            <input type=submit value="LFG">
-        </form>
-    </div>
+    <form method="POST" action="/lfg">
+        {{ form.csrf_token }}
+        <table class="lfg--block lfg--padding-1 lfg--color-secondary">
+            <tr>
+                <td>{{ form.name.label }}</td>
+                <td>
+                    {% for error in form.name.errors %}
+                        {{ error }}
+                    {% endfor %}
+                    {{ form.name }}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ form.have.label }}</td>
+                <td>
+                    {% for error in form.have.errors %}
+                        {{ error }}
+                    {% endfor %}
+                    {{ form.have }}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ form.need.label }}</td>
+                <td>
+                    {% for error in form.need.errors %}
+                        {{ error }}
+                    {% endfor %}
+                    {{ form.need }}
+                </td>
+            </tr>
+            <tr>
+                <td><input type=submit value="LFG"></td>
+            </tr>
+        </table>
+    </form>
 {% endblock %}

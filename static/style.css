@@ -127,3 +127,9 @@ body {
 .lfg--position-relative {
     position: relative;
 }
+
+input {
+    background-color: #333333;
+    border: none;
+    color: #777777;
+}
