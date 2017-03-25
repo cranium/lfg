@@ -6,6 +6,7 @@ from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, Length, NumberRange
 from flask_openid import OpenID
 from functools import wraps
+from entities import LFG
 
 app = Flask("lfg")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///development.sqlite3'
@@ -48,10 +49,15 @@ def lfg():
     if form.validate_on_submit():
         id = redis.incr("Counter")
 
+        lfg = LFG(id)
+        form.populate_obj(lfg)
+
         pipeline = redis.pipeline()
         with pipeline:
             pipeline.multi()
-            save_lfg_hash(pipeline, id, form)
+            key = "LFG:{id}".format(id=id)
+            save_object(pipeline, key, lfg)
+            pipeline.lpush("List", id)
             pipeline.execute()
 
         return redirect(url_for('index'))
@@ -80,16 +86,8 @@ def group(group_id):
     return "Group ID: {group_id}".format(group_id=group_id)
 
 
-def save_lfg_hash(pipeline: "redis.client.Pipeline", id: int, form: LfgForm):
-    key = "LFG:{id}".format(id=id)  # save my LFG as LFG:num
-    data = {
-        "id": id,
-        "name": form.name.data,
-        "have": form.have.data,
-        "need": form.need.data
-    }
-    pipeline.hmset(key, data)
-    pipeline.lpush("List", id)  # add to list of active keys
+def save_object(pipeline: "redis.client.Pipeline", cache_key: str, object: object):
+    pipeline.hmset(cache_key, object.__dict__)
 
 
 _steam_id_re = re.compile('steamcommunity.com/openid/id/(.*?)$')
