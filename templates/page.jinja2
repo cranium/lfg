@@ -8,7 +8,12 @@
 </head>
 <body>
     <div class="lfg--block lfg--padding-1 lfg--color-logo lfg--margin-bottom-4">LFG</div>
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+        <div class="col-sm-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="col-sm-4 lfg--block">Hi</div>
+    </div>
 </body>
 </html>
