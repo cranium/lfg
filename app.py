@@ -6,7 +6,7 @@ from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, Length, NumberRange
 from flask_openid import OpenID
 from functools import wraps
-from entities import LFG
+from entities.lfg import LFG
 
 app = Flask("lfg")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///development.sqlite3'
