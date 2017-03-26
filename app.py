@@ -4,6 +4,7 @@ from redis import StrictRedis
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, Length, NumberRange
+from wtforms.widgets import TextArea
 from flask_openid import OpenID
 from functools import wraps
 from entities.lfg import LFG
@@ -29,8 +30,8 @@ def require_login(f):
 
 class LfgForm(FlaskForm):
     name = StringField(validators=[
-        DataRequired(message="Required"),
-        Length(1, 50, message="Must be between 1 and 50 characters")
+            DataRequired(message="Required"),
+            Length(1, 50, message="Must be between 1 and 50 characters")
     ])
     have = IntegerField(validators=[
         NumberRange(max=20, message="Max 20")
@@ -39,6 +40,12 @@ class LfgForm(FlaskForm):
         DataRequired(message="Required"),
         NumberRange(min=1, max=20, message="Min 1, max 20")
     ])
+    description = StringField(
+        validators=[
+            Length(0, 300, message="Max 300 characters")
+        ],
+        widget=TextArea()
+    )
 
 
 @app.route('/lfg', methods=['GET', 'POST'])

@@ -13,6 +13,15 @@
                 </td>
             </tr>
             <tr>
+                <td>{{ form.description.label }}</td>
+                <td>
+                    {% for error in form.description.errors %}
+                        {{ error }}
+                    {% endfor %}
+                    {{ form.description }}
+                </td>
+            </tr>
+            <tr>
                 <td>{{ form.have.label }}</td>
                 <td>
                     {% for error in form.have.errors %}

@@ -5,13 +5,16 @@
     </div>
     {% for lfg in lfgs %}
         <div class="lfg--block lfg--padding-1 lfg--margin-bottom-4">
-            <div class="lfg--vertical-top lfg--flex-row">
+            <div class="lfg--flex-row">
                 <div class="lfg--position-relative">
                     <img class="lfg--display-block" src="{{ avatar_url }}">
                 </div>
                 <div class="lfg--flex-grow-3 lfg--flex-basis-0">
                     <div class="lfg--padding-1">
                         <p class="lfg--margin-0 lfg--text-uppercase lfg--text-bold">{{ lfg["name"] }}</p>
+                    </div>
+                    <div class="lfg--padding-1">
+                        <p class="lfg--margin-0 lfg--text-uppercase lfg--text-bold">{{ lfg["description"] }}</p>
                     </div>
                     <div class="lfg--padding-1">
                         <div class="lfg--progress-bar-outer lfg--position-relative">

@@ -128,7 +128,7 @@ body {
     position: relative;
 }
 
-input {
+input, textarea {
     background-color: #333333;
     border: none;
     color: #777777;
