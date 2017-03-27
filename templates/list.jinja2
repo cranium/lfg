@@ -10,27 +10,27 @@
                     <img class="lfg--display-block" src="{{ avatar_url }}">
                 </div>
                 <div class="lfg--flex-grow-3 lfg--flex-basis-0">
-                    <div class="lfg--padding-1">
+                    <div class="col-sm-6">
                         <p class="lfg--margin-0 lfg--text-uppercase lfg--text-bold">{{ lfg["name"] }}</p>
+                        {% if lfg["description"] %}
+                            <div class="lfg--padding-1">
+                                <p class="lfg--margin-0 lfg--color-secondary">{{ lfg["description"] }}</p>
+                            </div>
+                        {% endif %}
                     </div>
-                    {% if lfg["description"] %}
-                        <div class="lfg--padding-1">
-                            <p class="lfg--margin-0 lfg--color-secondary">{{ lfg["description"] }}</p>
-                        </div>
-                    {% endif %}
-                    <div class="lfg--padding-1">
+                    <div class="col-sm-6">
                         <div class="lfg--progress-bar-outer lfg--position-relative">
                             <span class="lfg--progress-bar-label">1/10</span>
                             <div class="lfg--progress-bar-inner" style="width: 20%"></div>
                         </div>
-                    </div>
-                    <div class="lfg--flex-row lfg--flex-between">
-                        <div class="lfg--color-secondary">
-                            <i class="material-icons lfg--color-secondary">mic</i>
-                            <i class="material-icons lfg--color-secondary">network_check</i>
-                        </div>
-                        <div class="lfg--text-right">
-                            <a class="lfg--button" href="/group/{{ lfg["id"] }}">Join</a>
+                        <div class="lfg--flex-row lfg--flex-between">
+                            <div class="lfg--color-secondary">
+                                <i class="material-icons lfg--color-secondary">mic</i>
+                                <i class="material-icons lfg--color-secondary">network_check</i>
+                            </div>
+                            <div class="lfg--text-right">
+                                <a class="lfg--button" href="/group/{{ lfg["id"] }}">Join</a>
+                            </div>
                         </div>
                     </div>
                 </div>

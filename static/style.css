@@ -73,6 +73,11 @@ body {
     align-items: center;
 }
 
+.lfg--flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .lfg--flex-row > div {
     margin: 4px;
 }
@@ -94,6 +99,10 @@ body {
 
 .lfg--flex-grow-3 {
     flex-grow: 3;
+}
+
+.lfg--flex-shrink-1 {
+    flex-shrink: 1;
 }
 
 .lfg--flex-basis-0 {
