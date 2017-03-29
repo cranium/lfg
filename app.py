@@ -54,17 +54,17 @@ def lfg():
     form = LfgForm(request.form)
 
     if form.validate_on_submit():
-        id = redis.incr("Counter")
+        lfg_id = redis.incr("Counter")
 
-        lfg = LFG(id)
+        lfg = LFG(lfg_id)
         form.populate_obj(lfg)
 
         pipeline = redis.pipeline()
         with pipeline:
             pipeline.multi()
-            key = "LFG:{id}".format(id=id)
+            key = "LFG:{lfg_id}".format(lfg_id=lfg_id)
             save_object(pipeline, key, lfg)
-            pipeline.lpush("List", id)
+            pipeline.lpush("List", lfg_id)
             pipeline.execute()
 
         return redirect(url_for('index'))
