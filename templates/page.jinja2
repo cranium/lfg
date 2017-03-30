@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="/static/grid.css">
 </head>
 <body>
-    <div class="lfg--block lfg--padding-1 lfg--color-logo lfg--margin-bottom-4">LFG</div>
+    <div class="lfg--block lfg--padding-1 lfg--margin-bottom-4">
+        <div class="lfg--color-logo lfg--text-center" style="font-size:32px">LFG</div>
+    </div>
     <div class="container">
         <div class="col-sm-8">
             {% block content %}
             {% endblock %}
         </div>
         <div class="col-sm-4">
-            <div class="lfg--block">Hi</div>
+            <div class="lfg--padding-1 lfg--text-center">
+                <a href="/login"><img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png"></a>
+            </div>
+            <div class="lfg--block lfg--padding-1">Welcome back, Cranium</div>
         </div>
     </div>
 </body>
