@@ -24,6 +24,10 @@ body {
     padding: 4px;
 }
 
+.lfg--padding-2 {
+    padding: 8px;
+}
+
 .lfg--margin-0 {
     margin: 0;
 }
@@ -76,6 +80,7 @@ body {
 .lfg--flex-column {
     display: flex;
     flex-direction: column;
+
 }
 
 .lfg--flex-row > div {
@@ -160,4 +165,14 @@ input, textarea {
     color: #777777;
     font-size: 1em;
     vertical-align: middle;
+}
+
+.lfg--image-caption-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333333;
+    border-radius: 2px;
+    padding: 2px;
+    opacity: .7;
 }

@@ -83,7 +83,7 @@ def index():
             pipeline.hgetall('LFG:' + lfg_id)
         lfgs = pipeline.execute()
 
-    avatar_url = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/63/63eeef78bdec22e51e43064a47ab0eb7764629be_medium.jpg"
+    avatar_url = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/63/63eeef78bdec22e51e43064a47ab0eb7764629be_full.jpg"
 
     return render_template('list.jinja2', lfgs=lfgs, avatar_url=avatar_url)
 
