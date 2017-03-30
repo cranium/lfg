@@ -142,3 +142,22 @@ input, textarea {
     border: none;
     color: #777777;
 }
+
+.lfg--tag {
+    background-color: #333333;
+    color: #777777;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.lfg--tag-icon {
+    color: #777777;
+    font-size: 1em;
+    vertical-align: middle;
+}
