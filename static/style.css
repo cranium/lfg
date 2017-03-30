@@ -168,9 +168,9 @@ input, textarea {
     vertical-align: middle;
 }
 
-.lfg--image-caption-top-left {
+.lfg--image-caption {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     background-color: #333333;
     border-radius: 2px;
