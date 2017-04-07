@@ -67,6 +67,8 @@ def lfg():
             pipeline.lpush("List", lfg_id)
             pipeline.execute()
 
+        redis.publish("main", "hello world")
+
         return redirect(url_for('index'))
 
     return render_template('lfg.jinja2', form=form)
