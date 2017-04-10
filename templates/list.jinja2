@@ -1,28 +1,14 @@
 {% extends "page.jinja2" %}
 {% block content %}
-    {% for lfg in lfgs %}
-        <div class="lfg--block lfg--padding-1 lfg--margin-bottom-4">
-            <div class="lfg--flex-row">
-                <div class="lfg--position-relative">
-                    <img class="lfg--display-block-" src="{{ avatar_url }}" width="86" height="86">
-                    <span class="lfg--image-caption lfg--color-success">+1</span>
-                </div>
-                <div class="lfg--flex-grow-1 lfg--flex-basis-0" style="height: 100%">
-                    <p class="lfg--margin-0 lfg--padding-vert-2 lfg--text-uppercase lfg--text-bold">{{ lfg["name"] }}</p>
-                    <p class="lfg--margin-0 lfg--padding-vert-2 lfg--color-secondary">
-                        <span class="lfg--tag"><i class="material-icons lfg--tag-icon">mic</i> mic required</span>
-                    </p>
-                    <div class="lfg--margin-0 lfg--padding-vert-2">
-                        <div class="lfg--progress-bar-outer lfg--position-relative">
-                            <span class="lfg--progress-bar-label">1/10</span>
-                            <div class="lfg--progress-bar-inner" style="width: 20%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lfg--text-right">
-                    <a class="lfg--button" href="/group/{{ lfg["id"] }}">Join</a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
+    <script>
+        var LFGS = [
+            {% for lfg in lfgs %}
+                {
+                    key: {{ lfg["id"] }},
+                    avatar_url: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/63/63eeef78bdec22e51e43064a47ab0eb7764629be_full.jpg",
+                    name: "{{ lfg["name"] }}"
+                },
+            {% endfor %}
+        ];
+    </script>
 {% endblock %}
