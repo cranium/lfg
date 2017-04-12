@@ -4,7 +4,7 @@
         var LFGS = [
             {% for lfg in lfgs %}
                 {
-                    key: {{ lfg["id"] }},
+                    id: {{ lfg["id"] }},
                     avatar_url: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/63/63eeef78bdec22e51e43064a47ab0eb7764629be_full.jpg",
                     name: "{{ lfg["name"] }}"
                 },

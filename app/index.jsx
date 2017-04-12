@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 
 class LFG extends React.Component {
     render () {
-        var name = "hello";
-        var id = 1;
-
         return (
             <div className="lfg--block lfg--padding-1 lfg--margin-bottom-4">
                 <div className="lfg--flex-row">
@@ -14,7 +11,7 @@ class LFG extends React.Component {
                             <span className="lfg--image-caption lfg--color-success">+1</span>
                     </div>
                     <div className="lfg--flex-grow-1 lfg--flex-basis-0" style={{height: 100 + '%'}}>
-                        <p className="lfg--margin-0 lfg--padding-vert-2 lfg--text-uppercase lfg--text-bold">{ name }</p>
+                        <p className="lfg--margin-0 lfg--padding-vert-2 lfg--text-uppercase lfg--text-bold">{ this.props.name }</p>
                         <p className="lfg--margin-0 lfg--padding-vert-2 lfg--color-secondary">
                             <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
                         </p>
@@ -26,7 +23,7 @@ class LFG extends React.Component {
                         </div>
                     </div>
                     <div className="lfg--text-right">
-                        <a className="lfg--button" href={"/group/" + id }>Join</a>
+                        <a className="lfg--button" href={"/group/" + this.props.id }>Join</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +34,7 @@ class LFG extends React.Component {
 class MyClass extends React.Component {
     render () {
         var rows = this.props.lfgs.map((lfg) =>
-            <LFG {...lfg} />
+            <LFG key={lfg.id} {...lfg} />
         );
 
         return (<div>{rows}</div>);

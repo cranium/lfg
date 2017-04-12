@@ -2,7 +2,6 @@ from autobahn.twisted.websocket import WebSocketServerFactory, WebSocketServerPr
 from twisted.internet import reactor
 import json
 import txredisapi as redis
-from twisted.internet.protocol import ClientCreator
 
 
 class LFGSubscriber(redis.SubscriberProtocol):
@@ -10,7 +9,7 @@ class LFGSubscriber(redis.SubscriberProtocol):
         self.subscribe("main")
 
     def messageReceived(self, pattern, channel, message):
-        print("pattern=%s, channel=%s message=%s" % (pattern, channel, message))
+        print("pattern={}, channel={} message={}".format(pattern, channel, message))
 
 
 class LFGSubscriberFactory(redis.SubscriberFactory):
@@ -51,7 +50,16 @@ if __name__ == '__main__':
 
     redis_factory = LFGSubscriberFactory()
 
-    reactor.connectTCP('localhost', 6379, LFGSubscriberFactory())
+    redis_host = 'localhost'
+    redis_port = 6379
 
-    reactor.listenTCP(9000, ws_factory)
+    reactor.connectTCP(redis_host, redis_port, LFGSubscriberFactory())
+
+    host = 'localhost'
+    port = 9000
+
+    print(" * Redis connected on ws://{}:{}/".format(redis_host, redis_port))
+    print(" * Running on ws://{}:{}/ (Press CTRL+C to quit)".format(host, port))
+
+    reactor.listenTCP(port, ws_factory)
     reactor.run()
