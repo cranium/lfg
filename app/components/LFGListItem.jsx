@@ -1,6 +1,10 @@
 import React from 'react';
 
 class LFG extends React.Component {
+    getStatusPercentage() {
+        return (this.props.have / this.props.group_size)*100 + "%";
+    }
+
     render () {
         return (
             <div className="lfg--block lfg--margin-bottom-4">
@@ -16,8 +20,8 @@ class LFG extends React.Component {
                         </div>
                         <div className="lfg--flex-row">
                             <div className="lfg--flex-basis-0 lfg--text-center lfg--margin-0 lfg--progress-bar-outer lfg--position-relative lfg--flex-grow-1">
-                                <div className="lfg--progress-bar-inner" style={{width: 20 + '%' }}></div>
-                                <div className="lfg--padding-1"><span className="lfg--progress-bar-label">1/10</span></div>
+                                <div className="lfg--progress-bar-inner" style={{width: this.getStatusPercentage()}}></div>
+                                <div className="lfg--padding-1"><span className="lfg--progress-bar-label">{this.props.have}/{this.props.group_size}</span></div>
                             </div>
                             <a className="lfg--flex-basis-0 lfg--margin-0 lfg--button lfg--margin-left-2" href={"/group/" + this.props.id }>Join</a>
                         </div>
