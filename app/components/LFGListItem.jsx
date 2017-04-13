@@ -21,7 +21,7 @@ class LFG extends React.Component {
                         <div className="lfg--flex-row">
                             <div className="lfg--flex-basis-0 lfg--text-center lfg--margin-0 lfg--progress-bar-outer lfg--position-relative lfg--flex-grow-1">
                                 <div className="lfg--progress-bar-inner" style={{width: this.getStatusPercentage()}}></div>
-                                <div className="lfg--padding-1"><span className="lfg--progress-bar-label">{this.props.have}/{this.props.group_size}</span></div>
+                                <div className="lfg--progress-bar-label lfg--padding-1">{this.props.have}/{this.props.group_size}</div>
                             </div>
                             <a className="lfg--flex-basis-0 lfg--margin-0 lfg--button lfg--margin-left-2" href={"/group/" + this.props.id }>Join</a>
                         </div>

@@ -73,7 +73,7 @@ body {
 }
 
 .lfg--progress-bar-label {
-    margin: 4px;
+    opacity: 0.99999;
 }
 
 .lfg--flex-row {
