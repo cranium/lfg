@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'static/bundle');
+var BUILD_DIR = path.resolve(__dirname, 'static/');
 var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
