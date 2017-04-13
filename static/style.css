@@ -158,14 +158,14 @@ input, textarea {
 .lfg--tag {
     background-color: #333333;
     color: #777777;
-    display: inline;
+    display: inline-block;
     padding: .2em .6em .3em;
     font-size: 75%;
     line-height: 1;
     text-align: center;
-    white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
+    cursor: default;
 }
 
 .lfg--tag-icon {
@@ -186,12 +186,4 @@ input, textarea {
 
 .lfg--tag-list > .lfg--tag {
     margin: 0 4px;
-}
-
-.lfg--tag:first-child {
-    margin-left: 0 !important;
-}
-
-.lfg--tag:last-child {
-    margin-right: 0 !important;
 }

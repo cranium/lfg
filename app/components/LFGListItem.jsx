@@ -14,12 +14,15 @@ class LFG extends React.Component {
                         <span className="lfg--image-caption lfg--color-success">+1</span>
                     </div>
                     <div className="lfg--margin-left-2 lfg--flex-grow-1 lfg--flex-basis-0 lfg--flex-column lfg--flex-between">
-                        <div className="lfg--text-uppercase lfg--text-bold">{ this.props.name }</div>
-                        <div className="lfg--color-secondary lfg--tag-list">
+                        <div className="lfg--flex-shrink-1 lfg--text-uppercase lfg--text-bold">{ this.props.name }</div>
+                        <div className="lfg--flex-shrink-1 lfg--color-secondary lfg--tag-list">
+                            <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
+                            <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
+                            <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
                             <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
                             <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
                         </div>
-                        <div className="lfg--flex-row">
+                        <div className="lfg--flex-shrink-1 lfg--flex-row">
                             <div className="lfg--flex-basis-0 lfg--text-center lfg--margin-0 lfg--progress-bar-outer lfg--position-relative lfg--flex-grow-1">
                                 <div className="lfg--progress-bar-inner" style={{width: this.getStatusPercentage()}}></div>
                                 <div className="lfg--progress-bar-label lfg--padding-1">{this.props.have}/{this.props.group_size}</div>
