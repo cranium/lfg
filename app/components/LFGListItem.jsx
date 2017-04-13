@@ -1,6 +1,14 @@
 import React from 'react';
 
 class LFG extends React.Component {
+    getKarma() {
+        if (!this.props.karma) {
+            return "";
+        } else {
+            return "+" + this.props.karma;
+        }
+    }
+
     getStatusPercentage() {
         return (this.props.have / this.props.group_size)*100 + "%";
     }
@@ -11,7 +19,9 @@ class LFG extends React.Component {
                 <div className="lfg--flex-row lfg--flex-between">
                     <div className="lfg--position-relative">
                         <img className="lfg--display-block" src={ this.props.avatar_url } width="86px" height="86px"/>
-                        <span className="lfg--image-caption lfg--color-success">+1</span>
+                        { this.props.karma > 0 &&
+                            <span className="lfg--image-caption lfg--color-success">{ this.getKarma() }</span>
+                        }
                     </div>
                     <div className="lfg--margin-left-2 lfg--flex-grow-1 lfg--flex-basis-0 lfg--flex-column lfg--flex-between">
                         <div className="lfg--flex-shrink-1 lfg--text-uppercase lfg--text-bold">{ this.props.name }</div>
