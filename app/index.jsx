@@ -4,26 +4,24 @@ import ReactDOM from 'react-dom';
 class LFG extends React.Component {
     render () {
         return (
-            <div className="lfg--block lfg--padding-1 lfg--margin-bottom-4">
-                <div className="lfg--flex-row">
+            <div className="lfg--block lfg--margin-bottom-4">
+                <div className="lfg--flex-row lfg--flex-between">
                     <div className="lfg--position-relative">
-                        <img className="lfg--display-block-" src={ this.props.avatar_url } width="86" height="86" />
-                            <span className="lfg--image-caption lfg--color-success">+1</span>
+                        <img className="lfg--display-block-" src={ this.props.avatar_url } width="86" height="86"/>
+                        <span className="lfg--image-caption lfg--color-success">+1</span>
                     </div>
-                    <div className="lfg--flex-grow-1 lfg--flex-basis-0" style={{height: 100 + '%'}}>
-                        <p className="lfg--margin-0 lfg--padding-vert-2 lfg--text-uppercase lfg--text-bold">{ this.props.name }</p>
-                        <p className="lfg--margin-0 lfg--padding-vert-2 lfg--color-secondary">
+                    <div className="lfg--flex-grow-1 lfg--flex-basis-0 lfg--flex-column lfg--flex-around" style={{"margin-left": "8px"}}>
+                        <div className="lfg--text-uppercase lfg--text-bold">{ this.props.name }</div>
+                        <div className="lfg--color-secondary">
                             <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
-                        </p>
-                        <div className="lfg--margin-0 lfg--padding-vert-2">
-                            <div className="lfg--progress-bar-outer lfg--position-relative">
-                                <span className="lfg--progress-bar-label">1/10</span>
-                                <div className="lfg--progress-bar-inner" style={{width: 20 + '%' }}></div>
-                            </div>
                         </div>
-                    </div>
-                    <div className="lfg--text-right">
-                        <a className="lfg--button" href={"/group/" + this.props.id }>Join</a>
+                        <div className="lfg--flex-row">
+                            <div className="lfg--text-center lfg--margin-0 lfg--progress-bar-outer lfg--position-relative lfg--flex-grow-1">
+                                <div className="lfg--progress-bar-inner" style={{width: 20 + '%' }}></div>
+                                <div className="lfg--padding-1"><span className="lfg--progress-bar-label">1/10</span></div>
+                            </div>
+                            <a className="lfg--margin-0 lfg--button lfg--margin-left-2" href={"/group/" + this.props.id }>Join</a>
+                        </div>
                     </div>
                 </div>
             </div>
