@@ -15,7 +15,8 @@ class LFG extends React.Component {
                     </div>
                     <div className="lfg--margin-left-2 lfg--flex-grow-1 lfg--flex-basis-0 lfg--flex-column lfg--flex-between">
                         <div className="lfg--text-uppercase lfg--text-bold">{ this.props.name }</div>
-                        <div className="lfg--color-secondary">
+                        <div className="lfg--color-secondary lfg--tag-list">
+                            <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
                             <span className="lfg--tag"><i className="material-icons lfg--tag-icon">mic</i> mic required</span>
                         </div>
                         <div className="lfg--flex-row">

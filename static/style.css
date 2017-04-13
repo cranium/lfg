@@ -183,3 +183,15 @@ input, textarea {
     padding: 2px;
     opacity: .7;
 }
+
+.lfg--tag-list > .lfg--tag {
+    margin: 0 4px;
+}
+
+.lfg--tag:first-child {
+    margin-left: 0 !important;
+}
+
+.lfg--tag:last-child {
+    margin-right: 0 !important;
+}
